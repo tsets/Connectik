@@ -1,0 +1,25 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# IntelliJIDEA project folder
+.idea
+
+# compass cash
+.sass-cache
+
+# npm modules folder
+node_modules
+
+# Sublime project/workspace files
+*.sublime-project
+*.sublime-workspace
+*.sublime-grunt.cache

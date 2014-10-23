@@ -1,0 +1,14 @@
+{
+  "name": "connectik",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.2.x",
+    "angular-route": "~1.2.x",
+    "normalize.css": "~3.0.2",
+    "angular-pouchdb": "~0.1.5",
+    "angularjs-geolocation": "~0.1.1",
+    "angular-google-maps": "~2.0.1",
+    "ngFileReader": "~0.0.5"
+  },
+  "appPath": "app"
+}

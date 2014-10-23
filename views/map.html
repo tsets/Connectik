@@ -1,0 +1,31 @@
+<div class="display-flex listPageToolbar" layout="horizontal" layout-align="center center">
+    <a href="#/car/" aria-label="Add new car" class="appToolbar__addBtn pure-button">
+        Add new car
+    </a>
+
+    <!-- fill up the space between left and right area -->
+    <span flex class="space">
+        <noscript>
+            JavaScript should be enabled in order to use this application.
+        </noscript>
+    </span>
+
+    <label>
+        Show in stock only
+        <input type="checkbox" aria-label="Show in stock only" class="appToolbar__stockOnlyBtn" ng-model="inStock"/>
+    </label>
+
+    <a href="#/list/" aria-label="List View" class="pure-button">
+        List view
+    </a>
+    <a href="#/map/" aria-label="List View" class="pure-button">
+        Map view
+    </a>
+</div>
+
+<ui-gmap-google-map center="map.center" zoom="map.zoom" flex class="mapPage">
+    <ui-gmap-markers doRebuildAll="true" models='markers' coords="'coords'" click="'showInfo'">
+    </ui-gmap-markers>
+</ui-gmap-google-map>
+
+<div toast ng-show="errorMsg"></div>

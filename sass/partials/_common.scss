@@ -1,0 +1,48 @@
+@import "compass/css3/flexbox";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.display-flex {
+  @include display-flex();
+}
+
+.flex-wrap {
+  @include flex-wrap(wrap);
+}
+
+.pure-form input.ng-invalid:not([type]):focus {
+  border-color: #e9322d;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.space {
+  display: block;
+  width: 60%;
+}
+
+.toast {
+  color: white;
+  position: absolute;
+  background: black;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  padding: 10px;
+}

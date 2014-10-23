@@ -1,0 +1,20 @@
+body {
+  header {
+    background: transparent url("/images/backaground.jpg") center center no-repeat;
+    height: 200px;
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+@import "partials/layout";
+@import "partials/pure-min";
+@import "partials/common";
+@import "partials/listPage";
+@import "partials/mapPage";
+@import "partials/carPage";

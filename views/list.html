@@ -1,0 +1,69 @@
+<header class="display-flex listPageToolbar" layout="horizontal" layout-align="end end">
+    <a href="#/car/" aria-label="Add new car" class="appToolbar__addBtn pure-button">
+        Add new car
+    </a>
+
+    <!-- fill up the space between left and right area -->
+    <span flex class="space">
+        <noscript>
+            JavaScript should be enabled in order to use this application.
+        </noscript>
+    </span>
+
+    <label class="stockOption">
+        Show in stock only
+        <input type="checkbox" aria-label="Show in stock only" class="appToolbar__stockOnlyBtn" ng-model="inStock"/>
+    </label>
+
+    <a href="#/list/" aria-label="List View" class="pure-button">
+        List view
+    </a>
+    <a href="#/map/" aria-label="List View" class="pure-button">
+        Map view
+    </a>
+</header>
+
+<div layout-fill>
+        <table class="pure-table-horizontal listPage__list">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Reg. Number</th>
+                    <th>in Stock</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat="car in cars | inStock:inStock" role="listitem">
+                <td>
+                    <img ng-src="{{car.doc.image}}" width="100px" height="100px"/>
+                </td>
+                <td flex>
+                    {{car.doc.brand}}
+                </td>
+                <td>
+                    {{car.doc.model}}
+                </td>
+                <td>
+                    {{car.doc._id}}
+                </td>
+                <td>
+                    <span ng-show="car.doc.inStock" flex >in stock</span>
+                    <span ng-show="!car.doc.inStock" flex>out of stock</span>
+                </td>
+                <td>
+                    <a ng-href="#/car/{{car.doc._id}}">
+                        <img src="/images/edit.png" alt="Edit"/>
+                    </a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div toast ng-show="errorMsg"></div>

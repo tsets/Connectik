@@ -1,0 +1,69 @@
+<!--
+    TODO:
+        - Disable Save button when form is invalid
+        - Style forms to indicate it is invalid
+        -
+-->
+<section class="carPage" layout="vertical" layout-fill>
+    <form name="carForm" flex class="pure-form">
+        <header class="carPage__topToolbar">
+            <div class="display-flex" flex layout="horizontal">
+                <h2 flex class="no-wrap space">
+                    Car Details
+                </h2>
+                <button class="pure-button pure-button-primary" ng-click="save()" ng-disabled="carForm.$invalid">
+                    Save
+                </button>
+
+                <button class="pure-button" ng-click="deleteCar()" ng-disabled="!car._rev" ng-show="car._rev">
+                    Delete
+                </button>
+
+                <a href="#/list/" class="pure-button">
+                    Cancel
+                </a>
+            </div>
+
+            <div class="carPage__modelInfo" ng-show="car" layout="vertical" layout-sm="horizontal" layout-align="start">
+                <input type="text" label="Brand" ng-model="car.brand" required placeholder="Brand"/>
+                <input type="text" label="Model" ng-model="car.model" required placeholder="Model"/>
+            </div>
+
+            <div class="display-flex">
+                <span flex></span>
+                <label>
+                    In Stock
+                    <input type="checkbox" ng-model="car.inStock" ng-true-value="1" />
+                </label>
+            </div>
+        </header>
+
+        <div flex ng-show="car" layout="vertical" layout-sm="horizontal" class="carPage__content pure-form-stacked">
+            <div>
+                <label for="date">Manufactured Date:</label>
+                    <input id="date" required ng-model="car.date" placeholder="Manufactured Date" type="date" max="{{dateToday}}" placeholder="yyyy-MM-dd"/>
+                <label for="regNumber">Registration number:</label>
+                    <input id="regNumber" required ng-model="car.regNumber" placeholder="Registration Number" ng-pattern="{{regNumRegex.toString()}}" ng-disabled="car._rev"/>
+            </div>
+
+            <section class="flex-wrap">
+                <div flex layout="vertical">
+                    <label>Select image</label>
+                    <div ng-file-reader on-readed="onReaded( event, file )" read-method="readMethod"></div>
+                    <img ng-src="{{car.image}}" ng-show="car.image" flex class="image_preview" height="250px" width="250px">
+                    <input type="hidden" required ng-model="car.image"/>
+                </div>
+
+                <div class="mapSection">
+                    <label>Car location:</label>
+                    <ui-gmap-google-map center="map.center" zoom="map.zoom" class="carPage__map" events="map.events" flex>
+                        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                        </ui-gmap-marker>
+                    </ui-gmap-google-map>
+                </div>
+            </section>
+        </div>
+    </form>
+
+    <div toast ng-show="errorMsg"></div>
+</section>

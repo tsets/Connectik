@@ -1,0 +1,32 @@
+@import "compass/css3/flexbox";
+
+$toolbarBackgroundColor: #212121;
+
+.listPageToolbar {
+  background-color: $toolbarBackgroundColor;
+  color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid #CCC;
+  box-shadow: 0 0 5px #CCC;
+
+  .pure-button {
+    margin: 5px;
+    text-decoration: none;
+  }
+
+  .stockOption {
+    padding: 10px 0;
+  }
+}
+
+.listPage__list {
+  width: 100%;
+
+  th {
+    padding: 20px 0;
+  }
+
+  td {
+    text-align: center;
+  }
+}

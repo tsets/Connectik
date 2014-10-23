@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" ng-app="connectikApp">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body layout="vertical" layout-fill>
+    <div layout="vertical" layout-fill ng-view role="main"></div>
+
+    <!-- Load Google Maps -->
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="scripts/pouchdb.js"></script>
+    <script src="bower_components/angular-pouchdb/angular-pouchdb.js"></script>
+    <script src="bower_components/angularjs-geolocation/src/geolocation.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/bluebird/js/browser/bluebird.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/ngFileReader/src/ngFileReader.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/pouchDB.js"></script>
+    <script src="scripts/services/google-maps.js"></script>
+    <script src="scripts/filters/inStock.js"></script>
+    <script src="scripts/directives/toast.js"></script>
+    <script src="scripts/controllers/ListController.js"></script>
+    <script src="scripts/controllers/MapController.js"></script>
+    <script src="scripts/controllers/CarController.js"></script>
+</body>
+</html>
